@@ -7,7 +7,16 @@ function avaliarPontuacoes(stringPontuacoes) {
     let maiorPontuacao = pontuacoes[0]            // iniciando com o primeiro elemento
     let menorPontuacao = pontuacoes[0]            // iniciando com o primeiro elemento
 
-    for (let i in pontuacoes) {
-        if(pontuacoes[i] > )
+    for (let i = 1; i < pontuacoes.length; i++) {
+        if (pontuacoes[i] > maiorPontuacao) {
+            maiorPontuacao = pontuacoes[i]
+            qtdQuebraDeRecords++
+        } else if (pontuacoes[i] < menorPontuacao) {
+            menorPontuacao = pontuacoes[i]
+            piorJogo = i + 1;
+        }
     }
+    return [qtdQuebraDeRecords, piorJogo]
 }
+
+console.log(avaliarPontuacoes(stringPontuacoes))
